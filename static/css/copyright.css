@@ -1,0 +1,10 @@
+#container{
+    position: relative;
+    width: 75%;
+    padding: 46px 40px 73px;
+    margin-left: 8rem;
+    }
+
+    #container{
+        font-family: LatoWebBold,
+    }

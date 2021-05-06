@@ -1,0 +1,56 @@
+{% extends "base/base.html" %}
+
+{% block title %} Inicio {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row" ><h4 class="color1">Libros de BackEnd</h4></div>
+        <div class="row">
+            {% for book in backend %}
+                <div class="col-6 col-sm-4 col-md4 col-lg-3 col-xl-2">
+                    <a href="{% url 'book:book_detail' book.id %}">
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <img src="{{ book.cover_image.url }}" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row"><h4 class="color1">Libros de FrontEnd</h4></div>
+        <div class="row">
+            {% for book in frontend %}
+                <div class="col-6 col-sm-4 col-md4 col-lg-3 col-xl-2">
+                    <a href="{% url 'book:book_detail' book.id %}">
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <img src="{{ book.cover_image.url }}" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row"><h4 class="color1">Libros de Ciencia de Datos</h4></div>
+        <div class="row">
+            {% for book in datascience %}
+                <div class="col-6 col-sm-4 col-md4 col-lg-3 col-xl-2">
+                    <a href="#">
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <img src="{{ book.cover_image.url }}" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
