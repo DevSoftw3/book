@@ -48,9 +48,8 @@ class AccederView(LoginView):
         return context
 
 
-
-class RestrccionView(View):
-    template_name = 'restriccion.html'
+class CopyrightView(View):
+    template = 'copyright.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        return render(request, self.template)
