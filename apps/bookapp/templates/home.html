@@ -53,4 +53,38 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row"><h4 class="color1">Libros de Bases de Datos</h4></div>
+        <div class="row">
+            {% for book in Data_books %}
+                <div class="col-6 col-sm-4 col-md4 col-lg-3 col-xl-2">
+                    <a href="#">
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <img src="{{ book.cover_image.url }}" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row"><h4 class="color1">Otros</h4></div>
+        <div class="row">
+            {% for book in others_books %}
+                <div class="col-6 col-sm-4 col-md4 col-lg-3 col-xl-2">
+                    <a href="#">
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <img src="{{ book.cover_image.url }}" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+
 {% endblock %}

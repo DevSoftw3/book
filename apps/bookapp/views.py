@@ -13,15 +13,22 @@ class HomeView(View):
 
     def get(self, request):
         template = 'home.html'
-        backend_books     = BookModel.objects.filter(backend_books=True)
-        frontend_books    = BookModel.objects.filter(frontend_books=True)
-        datascience_books = BookModel.objects.filter(datascience_books=True)
-        return render(request, template, {'backend':backend_books,'frontend':frontend_books,'datascience':datascience_books})
+        backend_books     = BookModel.objects.filter(backend_books=True).order_by('-id')
+        frontend_books    = BookModel.objects.filter(frontend_books=True).order_by('-id')
+        datascience_books = BookModel.objects.filter(datascience_books=True).order_by('-id')
+        Data_books        = BookModel.objects.filter(Data_books=True).order_by('-id')
+        others_books      = BookModel.objects.filter(others_books=True).order_by('-id')
+        return render(request, template, {'backend':backend_books,
+                                          'frontend':frontend_books,
+                                          'datascience':datascience_books,
+                                          'Data_books':Data_books,
+                                          'others_books':others_books,
+                                          })
 
 class AllBook_View(View):
     template = 'all_books.html'
     def get(self, request):
-        books = BookModel.objects.all()
+        books = BookModel.objects.all().order_by('-id')
         return render(request, self.template, {'books':books})
 
 
